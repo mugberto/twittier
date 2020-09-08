@@ -1,0 +1,2 @@
+class Tweety < ApplicationRecord
+end
