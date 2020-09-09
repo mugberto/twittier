@@ -19,7 +19,38 @@
       <div class="notification is-danger global-notification">
         <p class="alert"><%= alert %></p>
       </div>
-    <% end %>
+    <% end %>  
+
+    <nav class="navbar is-info" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <%= link_to root_path, class: "nav-item has-text-white is-size-4", role: "button" do %>
+          <h1 class="my-2 ml-5" >Twittier</h1>
+        <% end %>
+
+        <%= link_to root_path, class: "navbar-burger burger", role: "button", "aria-label" => "menu", "aria-expanded" => "false", "data-target" => "navbarBasicExample" do %>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        <% end %>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <%= link_to new_tweety_path, class: "button is-light has-text-info" do %>
+                <strong>New tweety</strong>
+              <% end %>
+              <%= link_to nil, class: "button is-info has-text-white" do %>
+                Log in
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>    
+
     <%= yield %>
   </body>
 </html>
