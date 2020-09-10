@@ -1,3 +1,5 @@
+<% 
+=begin %>
 <p id="notice"><%= notice %></p>
 
 <h1>Tweeties</h1>
@@ -25,3 +27,19 @@
 <br>
 
 <%= link_to 'New Tweety', new_tweety_path %>
+<%
+=end %>
+
+<section class="section">
+  <div class="columns">
+    <div class="column">
+      <%= render "profile"%>
+    </div>
+    <div class="column is-half">
+      <%= render "feed"%>
+    </div>
+    <div class="column">
+      <%= render "suggestions"%>
+    </div>
+  </div>
+</section>

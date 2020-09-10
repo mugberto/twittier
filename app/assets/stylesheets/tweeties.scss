@@ -1,3 +1,20 @@
 // Place all the styles related to the Tweeties controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.media {
+  padding: 1rem;
+  border: 1px #ddd solid;
+  border-radius: 5px;
+  .media-content {
+    .content-title {
+      margin-bottom: 1rem;
+    }
+  }
+  .tweety-profile {
+    border-radius: 50%;
+  }
+}
+
+form {
+  width: 100%;
+}
