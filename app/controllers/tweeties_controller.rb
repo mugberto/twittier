@@ -5,6 +5,7 @@ class TweetiesController < ApplicationController
   # GET /tweeties.json
   def index
     @tweeties = Tweety.all
+    @tweety = Tweety.new
   end
 
   # GET /tweeties/1

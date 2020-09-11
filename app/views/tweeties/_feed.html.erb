@@ -1,0 +1,61 @@
+<article class="media">
+  <%= form_with model: @tweety, local: true do |form| %>
+  
+    <% if @tweety.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(tweety.errors.count, "error") %> prohibited this tweety from being saved:</h2>
+  
+        <ul>
+          <% @tweety.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <div class="field">
+      <div class="control">
+        <%= form.text_area :message, class: 'textarea' %>
+      </div>
+    </div>
+  
+    <div class="field">
+      <div class="control">
+        <%= form.submit 'Post a tweety', class: 'button is-info' %>
+      </div>
+    </div>
+ 
+  <% end %>
+</article>
+
+
+<% @tweeties.each do | tweety | %>
+  <article class="media">
+    <figure class="media-left">
+      <p class="image is-64x64 ">
+        <img class="tweety-profile" src="https://bulma.io/images/placeholders/128x128.png">
+      </p>
+    </figure>
+    <div class="media-content">
+      <div class="content">
+        <div class="content-title"><strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small></div>
+        <p>
+          <%= tweety.message %>
+        </p>
+      </div>
+      <nav class="level is-mobile">
+        <div class="level-left">
+          <%= link_to tweety_path(tweety), class: "level-item" do %>
+            <span class="icon is-small"><i class="fas fa-link"></i></span>
+          <% end %>
+          <%= link_to edit_tweety_path(tweety), class: "level-item" do %>
+            <span class="icon is-small"><i class="fa fa-pencil"></i></span>
+          <% end %>
+          <%= link_to tweety_path(tweety), method: :delete, data: { confirm: "Do you really want to delete this tweety?" }, class: "level-item" do %>
+            <span class="icon is-small"><i class="fa fa-trash-o"></i></span>
+          <% end %>
+        </div>
+      </nav>
+    </div>
+  </article>
+<% end %>
